@@ -33,7 +33,11 @@
                             <div th:if="${errorMessage}" class="alert alert-danger">
                                 <span th:text="${errorMessage}"></span>
                             </div>                                                                         
-                            
+
+                            <div th:if="${successMessage}" class="alert alert-success">
+                                <span th:text="${successMessage}"></span>
+                            </div>                                                                         
+
                             <div class="mb-4">
                                 <img th:if="${house.getImageName()}" th:src="@{/storage/__${house.getImageName()}__}" class="w-100" alt="民宿画像">
                                 <img th:unless="${house.getImageName()}" th:src="@{/images/noImage.png}" class="w-100" alt="NO IMAGE">
