@@ -1,0 +1,264 @@
+html {
+	font-size: 14px;
+}
+ 
+body {
+  font-family: 'Noto Sans JP', sans-serif;  
+}
+ 
+h1 {
+  font-size: 1.5rem;
+}
+ 
+h2 {
+	font-size: 1.475rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+  text-align: center;
+}
+ 
+a {
+  color: #5196a6;
+  text-decoration: none !important;
+}
+ 
+a:hover {
+  color: #407784;
+}
+ 
+footer {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: 0;    
+  background-color: #f2f0eb;
+}
+ 
+.samuraitravel-wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+ 
+.samuraitravel-navbar {
+  min-height: 60px;
+}
+ 
+.samuraitravel-logo {
+  height: 30px;  
+}
+ 
+.samuraitravel-btn {
+  background-color: #5196a6;   
+  transition: 0.1s;
+}
+ 
+.samuraitravel-btn:hover {
+  opacity: 0.8;   
+}
+
+.samuraitravel-page-link {
+  color: #5196a6;
+}
+ 
+.samuraitravel-page-link:hover {
+  color: #407784;
+}
+ 
+.samuraitravel-active {
+  background-color: #5196a6;
+  border-color: #5196a6;
+}
+ 
+.samuraitravel-pre-wrap {
+  white-space: pre-wrap;
+}
+ 
+.samuraitravel-link-danger {
+  color: #f2594b;
+}
+ 
+.samuraitravel-link-danger:hover {
+  color: #a63c3c;
+}
+ 
+.samuraitravel-btn-danger {
+  background-color: #f2594b;
+  transition: 0.1s;
+}
+ 
+.samuraitravel-btn-danger:hover {
+  opacity: 0.8;   
+}
+ 
+.samuraitravel-dropdown-item:active {
+  background-color: #5196a6;
+}
+ 
+.samuraitravel-card-link {
+  transition: 0.3s;
+}
+ 
+.samuraitravel-card-link:hover {
+  opacity: 0.7;
+}
+ 
+.samuraitravel-horizontal-card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+ 
+.samuraitravel-sort-box {
+	width: 150px;
+}
+ 
+.samuraitravel-vertical-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+ 
+.samuraitravel-search-form {
+  max-width: 300px;
+}
+
+.review-card {
+	border: 1px;
+  border-radius: 5px;
+  display: block;
+  vertical-align: top;
+}
+ 
+.pagenation {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.pagenation.page-item.active.page-link {
+	background-color: #5196a6;
+	border-color: #5196a6;
+}
+
+.pagenation.page-link {
+	color: #5196a6;
+}
+
+.pagenation.page-link:hover {
+	color: #407784;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 1em;
+  margin-bottom: 1px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+	content:">";
+	color: #6c757d;
+}
+
+.samuraitravel-star {
+	color: gold;
+	font-size: 1.5em;
+}
+
+select.samuraitravel-star {
+	color: gold;
+}
+
+
+select.samuraitravel-star:focus {
+	color: gold;
+	background-color: white; /* フォーカス時の背景色 */
+}
+
+
+
+.btn-success {
+  background-color: #5196a6;
+  width: 200px;
+}
+
+.centered-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 120px);
+}
+
+.form-container {
+  width: 100%;
+  max-width:600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.form-group label {
+	font-weight:bold;
+}
+
+
+.form-group.d-flex {
+	display:flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.form-group.d-flex label {
+	margin-right: 10px;
+	flex-shrink: 0;
+}
+
+.form-group.d-flex select,
+.form-group.d-flex textarea {
+	flex-grow: 1;
+	margin-left: 10px
+}
+
+#score, #content {
+	width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.edit-delete-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.review-card {
+  position: relative;
+}
+
+.samuraitravel-favorite-button {
+    font-size: 1rem; /* 必要に応じてサイズを調整 */
+    color: #5196a6;   /* お気に入りボタンの色 */
+    transition: color 0.2s;
+}
+
+.samuraitravel-favorite-button:hover {
+    color: #407784;   /* ホバー時の色 */
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ @media screen and (min-width: 1400px) {
+   .samuraitravel-container {
+     max-width: 1200px;
+   }
+ }
