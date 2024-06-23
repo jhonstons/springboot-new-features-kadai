@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">    
+<head>
+	  <div th:replace="~{fragment :: meta}"></div>
+    <div th:replace="~{fragment :: styles}"></div>
+    
+    <title>お気に入り一覧</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div class="samuraitravel-wrapper">
+		<!-- ヘッダー -->
+		<div th:replace="~{fragment :: header}"></div>
+		
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a th:href="@{/}">ホーム</a></li>
+                <li class="breadcrumb-item active" aria-current="page">お気に入り一覧</li>
+            </ol>
+        </nav>
+		    <h1	class="mb-4 text-center">お気に入り一覧</h1>
+		    <div class="row">
+						<div class="col-12" th:each="favorite : ${favorites}">
+								<div class="card mb-3">
+										<div class="row no-gutters">
+												<div class="col-md-4">
+														<img th:if="${favorite.house.imageName}" th:src="@{/storage/__${favorite.house.imageName}__}" class="card-img" alt="House Image">
+														<img th:unless="${favorite.house.imageName}" th:src="@{/images/noImage.png}" class="card-img" alt="NO IMAGE">
+												</div>
+												<div class="col-md-8">
+														<div class="card-body">
+																<h5 class="card-title" th:text="${favorite.house.name}"></h5>
+																<p class="card-text" th:text="${favorite.house.description}"></p>
+																<p class="card-text">
+																		<small class="text-muted" th:text="'〒' + ${favorite.house.postalCode} + '' + ${favorite.house.address}"></small>
+																</p>
+																<p class="card-text">
+																		<span th:text="'価格: ' + ${favorite.house.price} + '円/泊'"></span>
+																</p>
+		                    		</div>
+                    		</div>
+										</div>
+                </div>
+						</div>
+        </div>
+    </div>
+		<ul class="pagenation justify-content-center">
+            <li class="page-item" th:if="${favoritePage.hasPrevious()}">
+                <a class="page-link" th:href="@{|/favorites?page=${favoritePage.number - 1}&size=${favoritePage.size}|}">前</a>
+            </li>
+            <li class="page-item" th:each="pageNum : ${#numbers.sequence(1, favoritePage.totalPages)}">
+          			<a class="page-link" th:href="@{|/favorites?page=${pageNum - 1}&size=${favoritePage.size}|}"
+          					th:text="${pageNum}" th:classappend="${pageNum == favoritePage.number + 1}?'active'"></a>       
+            </li>
+            <li class="page-item" th:if="${favoritePage.hasNext()}">
+                <a class="page-link" th:href="@{|/favorites?page=${favoritePage.number + 1}&size=${favoritePage.size}|}">次</a>
+            </li>
+        </ul>
+						<!-- フッター -->    
+  			<div th:replace="~{fragment :: footer}"></div>
+	</div>
+				<div th:replace="~{fragment :: scripts}"></div>
+				<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
